@@ -2,12 +2,14 @@
 
 **Bataille navale** :ship: :speedboat: :sailboat:
 
+https://slides.com/gpuget/extreme-programming/
+
 ## User stories
 
 ### Première version : Description
 
 | Id | En tant que ... | Je veux ... | Pour ... | Valeur métier |
-|---|---|---|---|---|---|
+|---|---|---|---|---|
 |1|Joueur|Connaître ses bateaux|Les placer sur le plateau de jeu|xxx|  |
 |2|Joueur|Voir le plateau de jeu|Placer ses bateaux|xxx|
 |3|Joueur|Choisir le prochain coup|Toucher un bateau adverse|xxx|
@@ -32,7 +34,7 @@
 ### Deuxième version : INVEST
 
 | Id | En tant que ... | Je veux ... | Pour ... | INVEST check |
-|---|---|---|---|---|---|
+|---|---|---|---|---|
 |12|Joueur|Rejoindre une partie active|Jouer contre un adversaire|INVE-T|
 |25| joueur | ne pas pouvoir rejoindre une partie déjà active | ne pas déranger la partie | INVEST | 
 |13|Joueur|attendre le bon nombre d'adversaire (0 ou 1)| pour commencer la partie|-NV-ST|
@@ -67,7 +69,7 @@
 #### Valeur métier
 
 | Id | En tant que ... | Je veux ... | Pour ... | Valeur métier |
-|---|---|---|---|---|---|
+|---|---|---|---|---|
 |12|Joueur|Rejoindre une partie active|Jouer contre un adversaire||
 |25| joueur | ne pas pouvoir rejoindre une partie déjà active | ne pas déranger la partie |  | 
 |13|Joueur|attendre le bon nombre d'adversaire (0 ou 1)| pour commencer la partie||
