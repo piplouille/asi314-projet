@@ -48,7 +48,7 @@ https://slides.com/gpuget/extreme-programming/
 |2|Joueur|Voir le plateau de jeu|Placer ses bateaux|INVEST|
 |---|---|---|---|---|---|
 |18| Adversaire | jouer après l'adversaire | alterner les joueurs | --VEST |
-|23| joueur | attendre que l'adversaire joue | continuer la partie partie | -NV--T |
+|(23)| joueur | attendre que l'adversaire joue | continuer la partie partie | -NV--T |
 |3|joueur|Choisir le prochain coup|essayer de toucher l'adversaire|I-VEST|
 |20| Joueur | Voir là où j'ai tiré | Choisir mon prochain tir | I-VEST |
 |4|Joueur|Voir où a tiré l'adversaire|Savoir s'il touche un de mes bateaux|INV-ST|
@@ -72,7 +72,7 @@ https://slides.com/gpuget/extreme-programming/
 | Id | En tant que ... | Je veux ... | Pour ... | Valeur métier |
 |---|---|---|---|---|
 |12|Joueur|Rejoindre une partie active|Jouer contre un adversaire||
-|25| joueur | ne pas pouvoir rejoindre une partie déjà active | ne pas déranger la partie |  | 
+|25| joueur | ne pas pouvoir rejoindre une partie déjà active | ne pas déranger la partie || 
 |13|Joueur|attendre le bon nombre d'adversaire (0 ou 1)| pour commencer la partie||
 |17|Spectateur|Rejoindre une partie en cours|Suivre le match||
 |7|Joueur|Pouvoir sélectionner le nombre de joueurs |Choisir mon mode de jeu (vs IA ou Joueur)||
@@ -84,7 +84,7 @@ https://slides.com/gpuget/extreme-programming/
 |---|---|---|---|---|---|
 |18| Adversaire | jouer après joueur (ou l'IA) | alterner les joueurs ||
 |3|joueur|Choisir le prochain coup|toucher l'adversaire||
-|23| joueur | attendre que l'IA joue | continuer une partie sans adversaire |  |
+|(23)| joueur | attendre que l'IA joue | continuer une partie sans adversaire |  |
 |20| Joueur | Voir là où j'ai tiré | Choisir mon prochain tir |  |
 |4|Joueur|Voir où a tiré l'adversaire|Savoir s'il touche un de mes bateaux||
 |9|Joueur|Savoir si toutes les parties d'un bateau ont été touchées|Savoir si le bateau a été coulé||
@@ -100,11 +100,34 @@ https://slides.com/gpuget/extreme-programming/
 |14|Joueur|Voir le nombre de parties que j'ai gagnées ou perdues|Suivre mon score||
 |16|Joueur|quitter une partie en cours|**Ragequit** arrêter de jouer||
 
-A la semaine prochaine
-:3
 #### Conditions d'acceptation
 
 |Ref| Etant donné... | Quand... | Alors... |
 |---|---|---|---|
+|1|Le début de partie, plateau vierge|Le jeu commence, avant le plaçage des pièces| le joueur voit toutes les pièces qu'il pourra placer|
+|2|Le début de partie, plateau vierge|le jeu commence, avant la phase d'attaque| le joueur peut placer toutes les pièces à sa disposition, sans superposition|
+|3|Un plateau de jeu à un instant donné | le joueur renseigne les coordonnées de son coup | Le coup est lancé sur le plateau adverse |
+|4| Un tir ennemi | l'adversaire tire | le joueur recoit un message |
+|4|Un tir ennemi | l'adversaire tire | le tir s'affiche sur le plateau allié|
+|4|Un tir ennemi | l'adversaire tire | on vérifie si le tir a touché un bateau |
+|5|La partie est en cours|un joueur joue à son tour|le spectateur voit la nouvelle grille actualisée|
+|6| la grille est de taille 10| le joueur place un bateau en 11-B-S |le placement est refusé|
+|6| la grille est de taille 10| le joueur place en bateau de taille 3 en 3-9-E|le placement est refusé|
+|6| la grille est de taille 10| le joueur place en bateau de taille 3 en 3-9-W|le placement est effectué|
+|7|Quand on sélectionne le nombre de joueurs | >2 joueurs ou <0 joueur | Partie ne peut pas être lancé|
+|8|Une partie à deux joueurs|le joueur 1 joue| il ne voit pas le plateau de jeu du joueur 2|
+|9|Un bateau sur le terrain|toutes ses parties ont été touchées|le bateau est signalé comme coulé|
+|10|Une carte de jeu pendant une partie,pendant le tour du joueur| le tir du joueur viens de couler le dernier bateau de l'adversaire | annoncer la victoire du joueur|
+|11| Un tir allié| le joueur tire | le tir s'affiche sur le plateau ennemi |
+|11| Un tir allié| le joueur tire | le joueur recoit un message selon le résultat du tir |
+|12|aucune partie n'est commencée|un joueur démarre une partie|un adversaire est créé|
 
-Salut ! (Il fodra push)
+|18|Le flot d'action courant | un joueur termine son tour | son adversaire débute son tour |
+|19| Un tir allié | Le joueur a touché | le joueur marque des points|
+|20|Une partie en cours|Je souhaite tirer|le joueur a accès aux tirs précédents|
+|21|La partie n'a pas commencé|le joueur sélectionne la taille de la grille| une grille de la bonne tailler s'affiche|
+|22|Un coup annoncé|Il touche un bateau|le joueur est prévenu qu'il a touché un bateau|
+|(23)| *est-ce qu'attendre ca fait partir des fonctions de jeu?* Le flot d'action courant |le joueur termine son tour contre l'IA| Le joueur patiente pendant le tour de l'IA |
+
+
+|71|Le menu principal| le joueur sélectionne le mode "2 joueurs"| la partie à deux joueurs débute|
