@@ -77,7 +77,7 @@ https://slides.com/gpuget/extreme-programming/
 |17|Spectateur|Rejoindre une partie en cours|Suivre le match|10|
 |21|Joueur|Pouvoir sélectionner la taille de la grille|Choisir la taille|20|
 |25| joueur | ne pas pouvoir rejoindre une partie déjà active | ne pas déranger la partie | 10 |
-|71|Joueur|Sélectionner le mode "Multijoueur" |jouer avec d'autres humains|40|
+|17|Joueur|Sélectionner le mode "Multijoueur" |jouer avec d'autres humains|40|
 |---|---|---|---|---|---|
 |1|Joueur|Connaître ses bateaux|planifier le placement sur le plateau de jeu|80  |
 |2|Joueur|Voir le plateau de jeu|placer ses bateaux|90|
@@ -90,6 +90,7 @@ https://slides.com/gpuget/extreme-programming/
 |18| Adversaire | jouer après l'adversaire | alterner les joueurs | 95 |
 |19| Joueur | gagner un point lorsque je touche un bateau ennemi | gagner la partie | 20 |
 |20| Joueur | Voir là où j'ai tiré | Choisir mon prochain tir | 85 |
+|22|Joueur|Différencier si les tirs ont touché ou manqué un bateau adversaire, sur ma map|planifier mes prochains tours|70|
 |---|---|---|---|---|---|
 |5|Spectateur|Voir les deux maps|Suivre le cours de la partie|20|
 |8|Joueur|Ne pas voir le placement des bateaux de l'adversaire|Préserver le game-play|60|
@@ -98,7 +99,6 @@ https://slides.com/gpuget/extreme-programming/
 |14|Joueur|Voir le nombre de parties que j'ai gagnées ou perdues|Suivre mon score|10|
 |15|Joueur|Commencer une nouvelle série de partie|Remettre les scores à zéro|30|
 |16|Joueur|quitter une partie en cours|**Ragequit** arrêter de jouer|10|
-|22|Joueur|Différencier si les tirs ont touché ou manqué un bateau adversaire, sur ma map|planifier mes prochains tours|70|
 
 #### Conditions d'acceptation
 
@@ -133,3 +133,68 @@ https://slides.com/gpuget/extreme-programming/
 |21|La partie n'a pas commencé|le joueur sélectionne la taille de la grille| une grille de la bonne tailler s'affiche|
 |22|Un coup annoncé|Il touche un bateau|le joueur est prévenu qu'il a touché un bateau|
 
+### Attribution des temps pour les user stories
+
+|Ref|Temps alloué (minutes) |
+|---|---|
+|1| (inclu la création d'objets "bateau" et affichage) 55 |
+|2| 42|
+|3| 22|
+|4| 40|
+|5| (no op)|
+|6| 75|
+|7| 16|
+|8| (présuppose l'alternance) 21|
+|9| 30|
+|10| 22 |
+|11| (comme 9) 25|
+|12|  55 (no op) |
+|13| (no op)|
+|14| (no op)|
+|15| (no op) |
+|16| 28|
+|17| (pas dans ce sprint)|
+|18| 30|
+|19| 16|
+|20| (proche de 11) 30|
+|21| (on considère que ça inclue "créer la classe") 34 |
+|22|-|
+|25| (no op) |
+|71| (juste l'entrée menu, similaire à 7) 16 |
+
+
+### Sprints 
+
+#### Sprint 1 (durée: 1h30 , deux teams)
+
+*Objectifs*: Initialiser, afficher, démarrer une partie
+Classes map, bateaux, joueurs
+
+
+|Refs | durée |
+|---|---|
+| temps de setup |25 |
+| 1 | 42 |
+| 2 | 22 |
+| 6 | 55 |
+| 21| 34 |
+|Total|178|
+
+Temps maximal alloué : 180
+
+#### Sprint 2 (durée 1h30, deux teams)
+
+*Objectif*: Tirs, voir les tirs, gagner
+Classes partie, tirs?
+
+|Refs|durée|
+|--|--|
+|18| 30 |
+|4| 40 |
+|3| 22 |
+|9| 30|
+|11| 25|
+|20|30|
+|total|177|
+
+S'il reste du temps : 10
