@@ -72,36 +72,34 @@ https://slides.com/gpuget/extreme-programming/
 | Id | En tant que ... | Je veux ... | Pour ... | Valeur métier /100 |
 |---|---|---|---|---|
 |7|Joueur|Sélectionner le mode "Contre IA" |jouer contre une IA| 30 |
-|12|Joueur|Rejoindre une partie active|Jouer contre un adversaire|20 UTILE ?|
-|13|Joueur|attendre l'adversaire en mode "multijoueur" | pour commencer la partie|20 UTILE ?|
-|17|Spectateur|Rejoindre une partie en cours|Suivre le match||
-|21|Joueur|Pouvoir sélectionner la taille de la grille|Choisir la taille|IN-EST|
-|25| joueur | ne pas pouvoir rejoindre une partie déjà active | ne pas déranger la partie | INVEST | 
-|71|Joueur|Sélectionner le mode "Multijoueur" |jouer avec d'autres humains|INVEST|
+|12|Joueur|Rejoindre une partie active|Jouer contre un adversaire|20|
+|13|Joueur|attendre l'adversaire en mode "multijoueur" | pour commencer la partie|20|
+|17|Spectateur|Rejoindre une partie en cours|Suivre le match|10|
+|21|Joueur|Pouvoir sélectionner la taille de la grille|Choisir la taille|20|
+|25| joueur | ne pas pouvoir rejoindre une partie déjà active | ne pas déranger la partie | 10 |
+|71|Joueur|Sélectionner le mode "Multijoueur" |jouer avec d'autres humains|40|
 |---|---|---|---|---|---|
-|1|Joueur|Connaître ses bateaux|Les placer sur le plateau de jeu|INVEST|  |
-|2|Joueur|Voir le plateau de jeu|Placer ses bateaux|INVEST|
-|6|Joueur|Placer un bateau|Initialiser la partie|INVEST|
+|1|Joueur|Connaître ses bateaux|planifier le placement sur le plateau de jeu|80  |
+|2|Joueur|Voir le plateau de jeu|placer ses bateaux|90|
+|6|Joueur|Placer un bateau|Initialiser la partie|100|
 |---|---|---|---|---|---|
-|3|joueur|Choisir le prochain coup|essayer de toucher l'adversaire|I-VEST|
-|4|Joueur|Voir où a tiré l'adversaire|Savoir s'il touche un de mes bateaux|INV-ST|
-|9|Joueur|Savoir si toutes les parties d'un bateau ont été touchées|Savoir si le bateau a été coulé|I-VEST|
-|11|Joueur|Savoir si j'ai touché un bateau|Guider mes prochains coups|--VEST|
-|18| Adversaire | jouer après l'adversaire | alterner les joueurs | --VEST |
-|19| Joueur | gagner un point lorsque je touche un bateau ennemi | gagner la partie | -NVEST |
-|20| Joueur | Voir là où j'ai tiré | Choisir mon prochain tir | I-VEST |
-|(23)| joueur | attendre que l'adversaire joue | continuer la partie partie | -NV--T |
+|3|joueur|Choisir le prochain coup|essayer de toucher l'adversaire|100|
+|4|Joueur|Voir où a tiré l'adversaire|Savoir s'il touche un de mes bateaux|70|
+|9|Joueur|Savoir si toutes les parties d'un bateau ont été touchées|Savoir si le bateau a été coulé|90|
+|11|Joueur|Savoir si j'ai touché un bateau|Guider mes prochains coups|85|
+|18| Adversaire | jouer après l'adversaire | alterner les joueurs | 95 |
+|19| Joueur | gagner un point lorsque je touche un bateau ennemi | gagner la partie | 20 |
+|20| Joueur | Voir là où j'ai tiré | Choisir mon prochain tir | 85 |
 |---|---|---|---|---|---|
-|5|Spectateur|Voir les deux maps|Suivre le cours de la partie|I-VEST|
-|8|Joueur|Ne pas voir le placement des bateaux de l'adversaire|Préserver le game-play|I-VEST|
-|10|Joueur|Déterminer si tous les bateaux de l'adversaire sont coulés|savoir si j'ai gagné|--VEST|
+|5|Spectateur|Voir les deux maps|Suivre le cours de la partie|20|
+|8|Joueur|Ne pas voir le placement des bateaux de l'adversaire|Préserver le game-play|60|
+|10|Joueur|Déterminer si tous les bateaux de l'adversaire sont coulés|savoir si j'ai gagné|90|
 |Meta-parties|---|---|---|---|---|
-|14|Joueur|Voir le nombre de parties que j'ai gagnées ou perdues|Suivre mon score|INVEST|
-|15|Joueur|Commencer une nouvelle série de partie|Remettre les scores à zéro|INVEST|
-|16|Joueur|quitter une partie en cours|**Ragequit** arrêter de jouer|INVEST|
-|22|Joueur|Différencier si les tirs ont touché ou manqué un bateau adversaire, sur ma map|planifier mes prochains tours|-NVEST|
-A la semaine prochaine
-:3
+|14|Joueur|Voir le nombre de parties que j'ai gagnées ou perdues|Suivre mon score|10|
+|15|Joueur|Commencer une nouvelle série de partie|Remettre les scores à zéro|30|
+|16|Joueur|quitter une partie en cours|**Ragequit** arrêter de jouer|10|
+|22|Joueur|Différencier si les tirs ont touché ou manqué un bateau adversaire, sur ma map|planifier mes prochains tours|70|
+
 #### Conditions d'acceptation
 
 |Ref| Etant donné... | Quand... | Alors... |
@@ -117,19 +115,21 @@ A la semaine prochaine
 |6| la grille est de taille 10| le joueur place en bateau de taille 3 en 3-9-E|le placement est refusé|
 |6| la grille est de taille 10| le joueur place en bateau de taille 3 en 3-9-W|le placement est effectué|
 |7|Quand on sélectionne le nombre de joueurs | >2 joueurs ou <0 joueur | Partie ne peut pas être lancé|
+|71|Le menu principal| le joueur sélectionne le mode "2 joueurs"| la partie à deux joueurs débute|
 |8|Une partie à deux joueurs|le joueur 1 joue| il ne voit pas le plateau de jeu du joueur 2|
 |9|Un bateau sur le terrain|toutes ses parties ont été touchées|le bateau est signalé comme coulé|
 |10|Une carte de jeu pendant une partie,pendant le tour du joueur| le tir du joueur viens de couler le dernier bateau de l'adversaire | annoncer la victoire du joueur|
 |11| Un tir allié| le joueur tire | le tir s'affiche sur le plateau ennemi |
 |11| Un tir allié| le joueur tire | le joueur recoit un message selon le résultat du tir |
 |12|aucune partie n'est commencée|un joueur démarre une partie|un adversaire est créé|
-
+|13|un joueur cherchant une partie| le joueur lance la recherche | le système match un autre joueur avec celui-ci |
+|14|le score en cours est affiché|une partie se termine|le score est actualisé|
+|15|Commencer une nouvelle série de partie|Les scores sont à zéro|La partie peut commencer|
+|16|une partie est en cour|le joeur décide de quitter la partie|La partie s'arrête|
+|17|une partie en cours, et un spectateur dans le lobby|le spectateur rejoint une partie en cours|voit le plateau de jeu des deux joueurs|
 |18|Le flot d'action courant | un joueur termine son tour | son adversaire débute son tour |
 |19| Un tir allié | Le joueur a touché | le joueur marque des points|
 |20|Une partie en cours|Je souhaite tirer|le joueur a accès aux tirs précédents|
 |21|La partie n'a pas commencé|le joueur sélectionne la taille de la grille| une grille de la bonne tailler s'affiche|
 |22|Un coup annoncé|Il touche un bateau|le joueur est prévenu qu'il a touché un bateau|
-|(23)| *est-ce qu'attendre ca fait partir des fonctions de jeu?* Le flot d'action courant |le joueur termine son tour contre l'IA| Le joueur patiente pendant le tour de l'IA |
 
-
-|71|Le menu principal| le joueur sélectionne le mode "2 joueurs"| la partie à deux joueurs débute|
