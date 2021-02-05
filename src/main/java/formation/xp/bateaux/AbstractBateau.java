@@ -22,4 +22,9 @@ public abstract class AbstractBateau {
         orientation = n_orientation;
     }
 
+    @Override
+    public String toString() {
+        return String.format("bateau :" + name +" "+ size + " " +orientation);
+    }
+
 }
