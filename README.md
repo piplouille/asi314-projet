@@ -188,7 +188,7 @@ Temps maximal alloué : 180
 Classes partie, tirs?
 
 |Refs|durée|
-|--|--|
+|---|---|
 |18| 30 |
 |4| 40 |
 |3| 22 |
