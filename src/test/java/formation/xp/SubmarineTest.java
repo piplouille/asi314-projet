@@ -11,16 +11,16 @@ public class SubmarineTest {
     public void test_creation_submarine() {
         
         Submarine mon_bateau = new Submarine("Le Terrible", Cardinal.e);
-        String name = mon_bateau.get_name();
+        String name = mon_bateau.getName();
         assertTrue(name == "Le Terrible");
 
-        Character label = mon_bateau.get_label();
+        Character label = mon_bateau.getLabel();
         assertTrue(label == 'S');
 
-        int size = mon_bateau.get_size();
+        int size = mon_bateau.getSize();
         assertTrue(size == 3);
 
-        Cardinal card = mon_bateau.get_orientation();
+        Cardinal card = mon_bateau.getOrientation();
         assertTrue(card == Cardinal.e);
     }
 }

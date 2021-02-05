@@ -10,16 +10,16 @@ public class BattleshipTest {
     public void test_creation_battleship() {
         
         Battleship mon_bateau = new Battleship("myBateau", Cardinal.e);
-        String name = mon_bateau.get_name();
+        String name = mon_bateau.getName();
         assertTrue(name == "myBateau");
 
-        Character label = mon_bateau.get_label();
+        Character label = mon_bateau.getLabel();
         assertTrue(label == 'B');
 
-        int size = mon_bateau.get_size();
+        int size = mon_bateau.getSize();
         assertTrue(size == 4);
 
-        Cardinal card = mon_bateau.get_orientation();
+        Cardinal card = mon_bateau.getOrientation();
         assertTrue(card == Cardinal.e);
     }
 

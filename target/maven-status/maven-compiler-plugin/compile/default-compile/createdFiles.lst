@@ -1,7 +1,10 @@
-formation/xp/bateaux/Carrier.class
 formation/xp/bateaux/Battleship.class
+formation/xp/bateaux/Carrier.class
+formation/xp/Board.class
 formation/xp/bateaux/AbstractBateau.class
+formation/xp/Board$1.class
 formation/xp/bateaux/Submarine.class
 formation/xp/bateaux/Cardinal.class
 formation/xp/Main.class
 formation/xp/bateaux/Destroyer.class
+formation/xp/exception/PutBateauException.class

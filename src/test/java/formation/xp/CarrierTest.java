@@ -11,16 +11,16 @@ public class CarrierTest {
     public void test_creation_carrier() {
         
         Carrier mon_bateau = new Carrier("CDG", Cardinal.e);
-        String name = mon_bateau.get_name();
+        String name = mon_bateau.getName();
         assertTrue(name == "CDG");
 
-        Character label = mon_bateau.get_label();
+        Character label = mon_bateau.getLabel();
         assertTrue(label == 'C');
 
-        int size = mon_bateau.get_size();
+        int size = mon_bateau.getSize();
         assertTrue(size == 5);
 
-        Cardinal card = mon_bateau.get_orientation();
+        Cardinal card = mon_bateau.getOrientation();
         assertTrue(card == Cardinal.e);
     }
 

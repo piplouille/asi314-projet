@@ -6,12 +6,12 @@ public abstract class AbstractBateau {
     protected int size;
     protected Cardinal orientation;
 
-    public Character get_label() {return label;}
-    public String get_name() {return name;}
-    public int get_size() {return size;}
-    public Cardinal get_orientation() {return orientation;}
+    public Character getLabel() {return label;}
+    public String getName() {return name;}
+    public int getSize() {return size;}
+    public Cardinal getOrientation() {return orientation;}
 
-    public void set_orientation(Cardinal n_orientation) {
+    public void setOrientation(Cardinal n_orientation) {
         orientation = n_orientation;
     }
 

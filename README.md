@@ -170,7 +170,6 @@ https://slides.com/gpuget/extreme-programming/
 *Objectifs*: Initialiser, afficher, démarrer une partie
 Classes map, bateaux, joueurs
 
-
 |Refs | durée |
 |---|---|
 | temps de setup |25 |
