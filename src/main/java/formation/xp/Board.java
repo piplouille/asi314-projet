@@ -25,10 +25,6 @@ public class Board {
         return this.alphabet;
     }
 
-    public void setAlphabet(Character[] alphabet) {
-        this.alphabet = alphabet;
-    }
-
     public int getSize() {
         return this.size;
     }
