@@ -105,7 +105,7 @@ https://slides.com/gpuget/extreme-programming/
 |Ref| Etant donné... | Quand... | Alors... |
 |---|---|---|---|
 |1|Le début de partie, plateau vierge|Le jeu commence, avant le plaçage des pièces| le joueur voit toutes les pièces qu'il pourra placer|
-|2|Le début de partie, plateau vierge|le jeu commence, avant la phase d'attaque| le joueur peut placer toutes les pièces à sa disposition, sans superposition|
+|1|Le début de partie, plateau vierge|le jeu commence, avant la phase d'attaque| le joueur peut placer toutes les pièces à sa disposition, sans superposition|
 |3|Un plateau de jeu à un instant donné | le joueur renseigne les coordonnées de son coup | Le coup est lancé sur le plateau adverse |
 |4| Un tir ennemi | l'adversaire tire | le joueur recoit un message |
 |4|Un tir ennemi | l'adversaire tire | le tir s'affiche sur le plateau allié|
@@ -138,7 +138,7 @@ https://slides.com/gpuget/extreme-programming/
 |Ref|Temps alloué (minutes) |
 |---|---|
 |1| (inclu la création d'objets "bateau" et affichage) 55 |
-|1| 42|
+|2| 42|
 |3| 22|
 |4| 40|
 |5| (no op)|
