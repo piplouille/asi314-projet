@@ -1,5 +1,9 @@
 package formation.xp;
 
+import formation.xp.bateaux.AbstractBateau;
+import formation.xp.bateaux.Cardinal;
+import formation.xp.exception.PutBateauException;
+
 public class Board {
     private final Character[] alphabet = {'A', 'B', 'C', 'D', 'E', 'F', 'G',
             'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P',
@@ -17,6 +21,14 @@ public class Board {
         }
     }
 
+    public Character[] getAlphabet() {
+        return this.alphabet;
+    }
+
+    public void setAlphabet(Character[] alphabet) {
+        this.alphabet = alphabet;
+    }
+
     public int getSize() {
         return this.size;
     }
@@ -31,6 +43,44 @@ public class Board {
 
     public void setBoats_array(Character[][] boats_array) {
         this.boats_array = boats_array;
+    }
+
+    public void putBateau(final AbstractBateau bateau, final int x, final int y) throws PutBateauException {
+        Cardinal orientation = bateau.getOrientation();
+        int sizeBateau = bateau.getSize();
+
+        int vertical = 0;
+        int horizontal = 0;
+
+        switch (orientation) {
+            case n:
+                vertical = 1;
+                break;
+            case s:
+                vertical = -1;
+                break;
+            case e:
+                horizontal = -1;
+                break;
+            case w:
+                horizontal = 1;
+                break;
+        }
+
+        //On vérifie que les cases sont libres et suffisamment grande pour le bateau à ajouter
+        for (int i = 0 ; i < sizeBateau ; i++)
+        {
+            if ( x+vertical*i >= this.size || x+vertical*i < 0 || y+horizontal*i >= this.size || y+horizontal*i < 0) {
+                throw new PutBateauException();
+            }
+            else if (boats_array[x+vertical*i][y+horizontal*i] != null) {
+                throw new PutBateauException();
+            }
+        }
+        
+        for (int i=0; i < sizeBateau ; i++) {
+            boats_array[x+vertical*i][y+horizontal*i] = bateau.getLabel();
+        }
     }
 
     public String toString() {
@@ -54,4 +104,9 @@ public class Board {
         }
         return board.toString();
     }
+
+    public Character getCase(int x, int y) {
+        return boats_array[x][y];
+    }
+
 }

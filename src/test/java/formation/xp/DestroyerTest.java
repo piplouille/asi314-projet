@@ -11,16 +11,16 @@ public class DestroyerTest {
     public void test_creation_destroyer() {
         
         Destroyer mon_bateau2 = new Destroyer("myBateau", Cardinal.s);
-        String name = mon_bateau2.get_name();
+        String name = mon_bateau2.getName();
         assertTrue(name == "myBateau");
 
-        Character label = mon_bateau2.get_label();
+        Character label = mon_bateau2.getLabel();
         assertTrue(label == 'D');
 
-        int size = mon_bateau2.get_size();
+        int size = mon_bateau2.getSize();
         assertTrue(size == 2);
 
-        Cardinal card = mon_bateau2.get_orientation();
+        Cardinal card = mon_bateau2.getOrientation();
         assertTrue(card == Cardinal.s);
     }
 }

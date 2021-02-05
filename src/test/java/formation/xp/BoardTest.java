@@ -1,9 +1,13 @@
 package formation.xp;
 
+import formation.xp.bateaux.Destroyer;
+import formation.xp.bateaux.Cardinal;
+import formation.xp.Board;
+
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
-
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class BoardTest {
 
@@ -51,5 +55,23 @@ public class BoardTest {
         Board test = new Board("Oui",expectedSize);
         int size = test.getSize();
         assertEquals(expectedSize, size);
+    }
+
+    @Test
+    public void testPutBateau() {
+        Destroyer monBateau= new Destroyer("myBateau", Cardinal.s);
+        Board test = new Board("Oui", 9);
+
+        try {
+            test.putBateau(monBateau, 0, 0);
+    
+            assertTrue(test.getCase(0, 0) == monBateau.getLabel());
+            assertTrue(test.getCase(0, 1) == monBateau.getLabel());
+            assertTrue(test.getCase(1, 1) == '.');
+            assertTrue(test.getCase(0, 2) == '.');
+        }
+        catch (Exception e) {
+            System.out.println("Erreur put bateau" + e.getMessage());
+        }
     }
 }
