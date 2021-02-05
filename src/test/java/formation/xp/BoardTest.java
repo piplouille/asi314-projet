@@ -11,7 +11,8 @@ public class BoardTest {
     public void testDisplay() {
         Board test = new Board("Oui",9);
         String board = test.toString();
-        String expectedBoard = "Navires :\n" +
+        String expectedBoard = "-- PLAYER : Oui\n" +
+                "Navires :\n" +
                 "   A B C D E F G H I \n" +
                 "1  . . . . . . . . . \n" +
                 "2  . . . . . . . . . \n" +
@@ -27,7 +28,8 @@ public class BoardTest {
 
         test = new Board("Oui",10);
         board = test.toString();
-        expectedBoard = "Navires :\n" +
+        expectedBoard = "-- PLAYER : Oui\n" +
+                "Navires :\n" +
                 "   A B C D E F G H I J \n" +
                 "1  . . . . . . . . . . \n" +
                 "2  . . . . . . . . . . \n" +
