@@ -138,7 +138,7 @@ https://slides.com/gpuget/extreme-programming/
 |Ref|Temps alloué (minutes) |
 |---|---|
 |1| (inclu la création d'objets "bateau" et affichage) 55 |
-|2| 42|
+|1| 42|
 |3| 22|
 |4| 40|
 |5| (no op)|
