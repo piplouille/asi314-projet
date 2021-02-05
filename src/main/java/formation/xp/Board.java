@@ -1,9 +1,9 @@
 package formation.xp;
 
 public class Board {
-    private final Character[] alphabet = { 'A', 'B', 'C', 'D', 'E', 'F', 'G',
+    private final Character[] alphabet = {'A', 'B', 'C', 'D', 'E', 'F', 'G',
             'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P',
-            'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' };
+            'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
     protected int size;
     protected String name;
     protected Character[][] boats_array = new Character[26][26];
@@ -35,6 +35,9 @@ public class Board {
 
     public String toString() {
         StringBuilder board = new StringBuilder();
+        board.append("-- PLAYER : ");
+        board.append(this.name);
+        board.append("\n");
         board.append("Navires :\n   ");
         for (int col = 0; col < size; col++)
             board.append(alphabet[col].toString()).append(" ");
