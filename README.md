@@ -198,3 +198,15 @@ Classes partie, tirs?
 |total|177|
 
 S'il reste du temps : 10
+
+### Évolution en cours de sprint
+
+- Le temps de setup était sous-estimmé, il a pris ~40 minutes ;
+- Le temps pour (1) était sous-estimé, il nous a fallu ~40 minutes pour être familier avec JUnit ;
+- Pour le deuxième sprint, on introduit une nouvelle tâche "moteur de jeu" qui demande les entrées utilisateur, défini ci-dessous
+
+```
+Ref 99: Étant donné un initialisation du jeu, quand le jeu démarre, il demande les paramètres de jeu à l'utilisateur en ligne de commande.
+```
+
+
